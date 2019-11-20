@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MvcMovie.Models.Sell>
+
+@{
+    ViewData["Title"] = "판매관리";
+}
+
+<h1>판매관리</h1>
+<p>
+    재고품명: <input type="text" name="SearchString">
+    <input type="submit" value="검색" />
+    <input type="submit" asp-action="Index" value="돌아가기">
+</p>
+
+<table class="table table-bordered" style="text-align: center;">
+    <thead>
+        <tr>
+            <th>
+                품목명
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SellDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.s_amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th>수정</th>
+            <th>삭제</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.p_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SellDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s_amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.s_code">Edit</a>
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="Delete" asp-route-id="@item.s_code">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-warning" asp-controller="Sells" asp-action="Create">상품추가</a>

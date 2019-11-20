@@ -1,0 +1,115 @@
+﻿
+.wrapper-main-title {
+    padding-bottom: 20px;
+    font-size: 32px;
+    color: #000;
+}
+
+.wrapper-page-summary {
+    padding: 20px 0;
+    border: 1px solid #ccc;
+    border-style: solid none solid none;
+    font-size: 16px;
+    line-height: 1.7
+}
+
+.wrapper-sub-title {
+    margin-top: 30px;
+    font-size: 26px;
+    color: #000000;
+}
+
+.wrapper-sub-list {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+    .wrapper-sub-list li {
+        background: url(/common/images/common/bullet-bar-small.png) no-repeat 3px 8px;
+        padding-left: 15px;
+        margin: 10px 0;
+        font-size: 16px;
+        line-height: 1.7
+    }
+
+.sub-contents .wrapper-faq {
+    padding: 15px 0 0;
+}
+
+    .sub-contents .wrapper-faq .faq-contents {
+        margin: 0;
+    }
+
+        .sub-contents .wrapper-faq .faq-contents .faq-contents-body {
+            padding: 0;
+            border: 0;
+        }
+
+            .sub-contents .wrapper-faq .faq-contents .faq-contents-body ul li {
+                display: block;
+                font-size: 16px;
+                line-height: 1.7
+            }
+
+                .sub-contents .wrapper-faq .faq-contents .faq-contents-body ul li .faq-answer:before {
+                    color: #1f78b5
+                }
+
+.wrapper-sub-description {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+    .wrapper-sub-description > li {
+        margin: 20px 0 30px;
+        font-size: 16px;
+        line-height: 1.7
+    }
+
+        .wrapper-sub-description > li > .title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            margin-left: 10px
+        }
+
+        .wrapper-sub-description > li > ul > li {
+            background: url(/common/images/common/bullet-bar-small.png) no-repeat 3px 8px;
+            padding-left: 15px;
+            margin: 10px 0 10px 15px;
+            font-size: 16px;
+            line-height: 1.7
+        }
+
+.wrapper-sub-capture:not(:empty) {
+    text-align: center;
+    /*min-height:450px*/
+}
+
+.wrapper-sub-capture > img {
+    border: 1px solid #999;
+}
+
+.wrapper-faq .faq-contents .faq-contents-body ul li.active .faq-answer {
+    font-size: 16px;
+    line-height: 1.7
+}
+
+   
+    /*폰트사이즈*/
+    .heading10 {
+        font-size: 20px;
+    }
+
+    .heading20 {
+        font-size: 18px;
+    }
+
+    .heading30 {
+        font-size: 16px;
+    }
+
+    .heading40 {
+    }
+   
+

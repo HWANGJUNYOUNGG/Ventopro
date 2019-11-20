@@ -1,0 +1,48 @@
+﻿@model MvcMovie.Models.WarehouseLocationViewModel
+
+@{
+    ViewData["Title"] = "재고관리";
+}
+
+<h1>재고검색</h1>
+
+
+<form asp-controller="Warehouses" asp-action="Index" method="get">
+    <p>
+        재고위치: <select asp-for="Warehousew_location" asp-items="Model.p_locations">
+            <option value="">All</option>
+        </select>
+        재고품명: <input type="text" name="SearchString">
+        <input type="submit" value="검색" />
+        <input type="submit" asp-action="Index" value="돌아가기">
+    </p>
+</form>
+<table class="table table-bordered" style="text-align: center;">
+    <thead>
+        <tr>
+            <th>품목코드</th>
+            <th>품목명</th>
+            <th>수량</th>
+            <th>창고위치</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.p_code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.p_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.p_many)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.p_location)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,80 @@
+﻿@model MvcMovie.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>상품관리</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="p_code" />
+
+            <div class="form-group">
+                <label asp-for="p_name" class="control-label"></label>
+                <input asp-for="p_name" class="form-control" />
+                <span asp-validation-for="p_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="p_brandname" class="control-label"></label>
+                <input asp-for="p_brandname" class="form-control" />
+                <span asp-validation-for="p_brandname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="p_measure" class="control-label"></label>
+                <select asp-for="p_measure" class="form-control">
+                    <option value="180">180</option>
+                    <option value="190">190</option>
+                    <option value="200">200</option>
+                    <option value="210">210</option>
+                    <option value="220">220</option>
+                    <option value="230">220</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="p_many" class="control-label"></label>
+                <input asp-for="p_many" class="form-control" />
+                <span asp-validation-for="p_many" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="p_comprice" class="control-label"></label>
+                <input asp-for="p_comprice" class="form-control" type="number"  step="10000" />
+                <span asp-validation-for="p_comprice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="p_customerprice" class="control-label"></label>
+                <input asp-for="p_customerprice" class="form-control" type="number"  step="10000" />
+                <span asp-validation-for="p_customerprice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="p_location" class="control-label"></label>
+                <select asp-for="p_location" class="form-control">
+                    <option value="큰창고">큰창고</option>
+                    <option value="작은창고">작은창고</option>
+                    <option value="매장">매장</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="p_amount" class="control-label"></label>
+                <select asp-for="p_amount" class="form-control">
+                    <option value="(개)">(개)</option>
+                    <option value="(세트)">(세트)</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="저장" class="btn btn-primary" />
+                <a class="btn btn-warning" asp-controller="Products" asp-action="Index">취소</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
